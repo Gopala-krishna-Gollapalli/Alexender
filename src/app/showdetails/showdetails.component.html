@@ -1,0 +1,32 @@
+
+<div class="jumbotron m-2" style="background-color:bisque">
+
+
+  <select (change)="dynamicOption($event.target.value)">
+    <option>Select Field</option>
+    <option *ngFor="let i of options" value="{{i}}">
+  {{i}}
+    </option>
+  </select>
+  
+  
+  <input type="text" name="name" placeholder="Search here..."   [(ngModel)]="searchTerm">
+  <table class="bootstrap table table-hover table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Ph.no</th>
+    <th>Document</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let i of kl |search:searchTerm:s">
+      <td>{{i.uniqid}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.dob}}</td>
+    <td>{{i.phno}}</td>
+    <td>{{i.url}}</td>
+  </tr>  
+  </tbody>
+  </table>
+  

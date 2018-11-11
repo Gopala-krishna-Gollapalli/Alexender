@@ -1,0 +1,83 @@
+<div class="text-center " style="font-family:'Times New Roman', Times, serif">
+  <h4><strong>Full name:
+
+{{y.name}}</strong></h4>  
+</div>
+
+
+
+<div class=" text-center" style="font-family:'Times New Roman', Times, serif">
+ <h4><strong>DOB: 
+
+     {{y.dob}}</strong></h4>
+</div>
+
+
+
+
+
+
+<div class=" text-center" style="font-family:'Times New Roman', Times, serif">
+ <h4><strong> Gender: 
+
+
+     {{y.gender}}</strong></h4>
+</div>
+
+
+
+
+<div class="text-center" style="font-family:'Times New Roman', Times, serif">
+ <h4><strong>uniqueid:
+
+   {{y.uniqid}}</strong></h4>
+</div>
+
+
+<div class="text-center" style="font-family:'Times New Roman', Times, serif">
+  <h4><strong>ph.no:
+ 
+    {{y.phno}}</strong></h4>
+ </div>
+ 
+
+
+<br/>
+
+<button type="button" class="btn btn-primary mx-auto d-block" (click)="change()">File</button>
+<button type="button"  class="btn btn-danger mx-auto d-block mt-3" (click)="change1()">Logout</button>
+<div *ngIf="b">
+<form #ref="ngForm" (ngSubmit)="test(ref.value)" class="form-group mt-5 offset-4" style="width:30%">
+  
+  <input type="text" name="uid" [(ngModel)]="uid" #ref1="ngModel" class="form-control"  required  placeholder="Enter Uniqid"> <br/><br/>
+    
+          <input type="{{s?'text':'password'}}" class="mt-5 form-control" name="password" [(ngModel)]="password" #ref2="ngModel"  required placeholder="password"><br/>
+          <input type="checkbox" name="showpassword" [(ngModel)]=s>showpassword
+         
+          <input type="submit"  class="mx-auto d-block btn btn-primary" value="Uploded file" data-toggle="modal" data-target="#myModal" >
+   
+</form>
+</div>
+
+
+<div *ngIf="modalShow"  class="modal fade show" role="dialog" style="display:block">
+  <div class="modal-dialog">
+
+  
+    <div class="modal-content">
+      
+        
+        
+      
+      <div class="modal-body" style="width:250px;height: 300px;">
+        <iframe [src]="video | safe" style="overflow-x:hidden;overflow-y: hidden; 
+    display:block; position: absolute; width:100%; height: 250px">
+</iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default close"  data-dismiss="modal" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

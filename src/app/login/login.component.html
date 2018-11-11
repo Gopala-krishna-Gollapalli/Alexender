@@ -1,0 +1,27 @@
+
+<div class="row mt-5">
+  <div class="col-md-6 offset-3 jumbotron" style="background-color: bisque">
+      <h2 class="text-center text-primary">LogIn Form</h2>
+      <form #ref="ngForm" (ngSubmit)="test(ref.value)" class="form-group mt-5 offset-4"style="width:30%">
+        Enter Phonenumber:
+        <input type="text" name="phno" [(ngModel)]="phno" #ref1="ngModel" required> <br/><br/>
+       
+                <label *ngIf="ref1.touched && ref1.invalid" class="text-danger">
+                  *plz enter this field
+                </label>
+        
+              password :
+                <input type="{{s?'text':'password'}}" class="mt-5 form-control" name="password1" [(ngModel)]="password1" #ref2="ngModel" class="g"  required placeholder="********"><br/>
+                <input type="checkbox" name="showpassword" [(ngModel)]=s>showpassword
+                <label *ngIf="ref2.touched && ref2.invalid" class="text-danger">
+                    *plz enter this field
+                  </label><br/>
+                <input type="submit"  class="mx-auto d-block btn btn-primary" value="Sign In">
+         
+      </form>
+      
+      
+  </div>
+</div>
+
+
