@@ -48,16 +48,7 @@ app.get('/api', function (req, res) {
 });
 
 
-// app.post('/', function (req, res) {
-//   upload(req, res, function (err) {
-//     if (err) {
-//         console.log("cs " + err);
-//       return
-//     }
 
-//     res.end('You new avatar is uploaded')
-//     // Everything went fine
-//   })
 
 
 
@@ -243,7 +234,7 @@ app.get('/search',(req,res)=>{
 
 app.use(express.static(path.join(__dirname, 'dist/file')));
 
- 
-app.listen(3000,(req,res)=>{
+
+app.listen(process.env.PORT||8080,(req,res)=>{
   console.log('Node.js server is running on port.....');
 });
