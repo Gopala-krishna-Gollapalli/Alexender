@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const router = express.Router();
 var dbo;
-const DIR = 'dist/file/assets';
+const DIR = './dist/file/assets';
 var url1;
 var uniqid = require('uniqid');
 var name1;
@@ -235,6 +235,6 @@ app.get('/search',(req,res)=>{
 app.use(express.static(path.join(__dirname, 'dist/file')));
 
 
-app.listen(process.env.PORT||8080,(req,res)=>{
+app.listen(3000,(req,res)=>{
   console.log('Node.js server is running on port.....');
 });
